@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
 export default function WorkerLogin() {
   const [workerId, setWorkerId] = useState("");
@@ -31,6 +32,7 @@ export default function WorkerLogin() {
   };
 
   return (
+     <Suspense fallback={<p className="text-center py-10">Loading...</p>}>
     <div className="flex min-h-screen items-center justify-center bg-gray-900">
       <form
         onSubmit={handleSubmit}
@@ -62,5 +64,6 @@ export default function WorkerLogin() {
         </button>
       </form>
     </div>
+  </Suspense>
   );
 }
