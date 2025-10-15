@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import connectDB from "@/lib/db";
+import connectDB from "@/lib/mongodb";
 import Task from "@/models/Task";
 import Worker from "@/models/Worker";
 
